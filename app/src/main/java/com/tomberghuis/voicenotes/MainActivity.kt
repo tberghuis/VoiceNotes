@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 // this comment is a test
+//another test
 
 class MainActivity : AppCompatActivity() {
 
