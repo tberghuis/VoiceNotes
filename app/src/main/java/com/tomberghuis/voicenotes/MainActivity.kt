@@ -8,10 +8,6 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-
-// this comment is a test
-//another test
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
