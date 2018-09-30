@@ -32,7 +32,7 @@ abstract class VoiceNotesDatabase : RoomDatabase() {
                         "voicenotes_database"
                 )
                         .fallbackToDestructiveMigration()
-                        .addCallback(WordDatabaseCallback(scope))
+                        .addCallback(VoiceNotesDatabaseCallback(scope))
                         .build()
                 INSTANCE = instance
                 // return instance
@@ -40,7 +40,7 @@ abstract class VoiceNotesDatabase : RoomDatabase() {
             }
         }
 
-        private class WordDatabaseCallback(
+        private class VoiceNotesDatabaseCallback(
                 private val scope: CoroutineScope
         ) : RoomDatabase.Callback() {
             override fun onOpen(db: SupportSQLiteDatabase) {
@@ -64,9 +64,9 @@ abstract class VoiceNotesDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
             notesDao.deleteAll()
 
-            var note = Note(null,"Hello",System.currentTimeMillis())
+            var note = Note(1,"Hello",System.currentTimeMillis())
             notesDao.insert(note)
-            note = Note(null,"World!", System.currentTimeMillis())
+            note = Note(2,"World!", System.currentTimeMillis())
             notesDao.insert(note)
         }
     }
