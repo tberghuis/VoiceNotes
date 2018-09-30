@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/launcher_home">
+    <fragment
+        android:id="@+id/launcher_home"
+        android:name="com.tomberghuis.voicenotes.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/new_note_action"
+            app:destination="@+id/new_note"
+             />
+
+    </fragment>
+    <fragment
+        android:id="@+id/new_note"
+        android:name="com.tomberghuis.voicenotes.EditNoteFragment"
+        tools:layout="@layout/new_note_fragment">
+    </fragment>
+</navigation>
