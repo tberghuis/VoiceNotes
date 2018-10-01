@@ -39,8 +39,15 @@ class MainFragment : Fragment() {
 //        )
 
         // argument newNote is true by default
+//        view.findViewById<FloatingActionButton>(R.id.new_note_action_bt)?.setOnClickListener(
+//                Navigation.createNavigateOnClickListener(R.id.new_note_action, null)
+//        )
+
+
+        // need to rewrite so model.editNoteId is set to null before navigating
         view.findViewById<FloatingActionButton>(R.id.new_note_action_bt)?.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.new_note_action, null)
         )
     }
+
 }

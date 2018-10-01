@@ -1,7 +1,5 @@
 package com.tomberghuis.voicenotes
 
-//import android.arch.lifecycle.AndroidViewModel
-//import android.arch.lifecycle.LiveData
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -19,10 +17,14 @@ class VoiceNotesViewModel(application: Application) : AndroidViewModel(applicati
 
     val allNotes: LiveData<List<Note>>
 
+    var editNoteId: Long?
+
+
     init {
         val notesDao = VoiceNotesDatabase.getDatabase(application, scope).notesDao()
         repository = VoiceNotesRepository(notesDao)
         allNotes = repository.allNotes
+        editNoteId = null
     }
 
     fun insert(note: Note) = scope.launch(Dispatchers.IO) {
