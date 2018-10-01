@@ -2,9 +2,15 @@ package com.tomberghuis.voicenotes
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+//import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import kotlinx.android.synthetic.main.navigation_activity.*
+
+//import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+//import kotlinx.android.synthetic.main.navigation_activity.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set up Action Bar
         val navController = host.navController
-//        setupActionBar(navController)
+        setupActionBar(navController)
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         voiceNotesViewModel = ViewModelProviders.of(this).get(VoiceNotesViewModel::class.java)
@@ -43,9 +49,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    private fun setupActionBar(navController: NavController) {
-//        setupActionBarWithNavController(this, navController)
-//    }
+    private fun setupActionBar(navController: NavController) {
+//        setupActionBarWithNavController(this,navController,null)
+        setupActionBarWithNavController(this, navController)
+    }
 //
 //    override fun onSupportNavigateUp(): Boolean {
 //        return NavigationUI.navigateUp(null,
