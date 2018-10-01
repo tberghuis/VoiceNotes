@@ -4,14 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.tomberghuis.voicenotes.EditNoteFragment">
 
-    <TextView
-        android:id="@+id/text"
+    <EditText
+        android:id="@+id/note_edittext"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:layout_marginTop="112dp"
-        android:text="edit note fragment"
-        android:textAlignment="center"
-        android:textSize="52sp" />
-
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:inputType="textMultiLine" />
 </FrameLayout>

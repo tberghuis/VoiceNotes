@@ -63,10 +63,9 @@ abstract class VoiceNotesDatabase : RoomDatabase() {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
             notesDao.deleteAll()
-
-            var note = Note(1,"Hello",System.currentTimeMillis())
+            var note = Note(null,"Hello",System.currentTimeMillis())
             notesDao.insert(note)
-            note = Note(2,"World!", System.currentTimeMillis())
+            note = Note(null,"World!", System.currentTimeMillis())
             notesDao.insert(note)
         }
     }

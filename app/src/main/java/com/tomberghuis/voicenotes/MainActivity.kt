@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.widget.Toast
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.navigation_activity.*
 import androidx.navigation.ui.NavigationUI
@@ -31,12 +32,6 @@ class MainActivity : AppCompatActivity() {
         // Get a new or existing ViewModel from the ViewModelProvider.
         voiceNotesViewModel = ViewModelProviders.of(this).get(VoiceNotesViewModel::class.java)
 
-
-
-
-
-
-
         // TODO can be removed
         navController.addOnNavigatedListener { _, destination ->
             val dest: String = try {
@@ -55,5 +50,9 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(null,
+                Navigation.findNavController(this, R.id.my_nav_host_fragment))
+    }
 
 }
