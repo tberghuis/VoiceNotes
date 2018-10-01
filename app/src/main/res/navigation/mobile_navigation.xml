@@ -12,12 +12,18 @@
         <action
             android:id="@+id/new_note_action"
             app:destination="@+id/new_note"
-             />
+             >
+        </action>
 
     </fragment>
     <fragment
         android:id="@+id/new_note"
         android:name="com.tomberghuis.voicenotes.EditNoteFragment"
         tools:layout="@layout/edit_note"
-    />
+        >
+
+        <argument
+            android:name="newNote"
+            android:defaultValue="true" />
+    </fragment>
 </navigation>

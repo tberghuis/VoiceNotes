@@ -1,14 +1,12 @@
 package com.tomberghuis.voicenotes
 
+//import android.arch.lifecycle.AndroidViewModel
+//import android.arch.lifecycle.LiveData
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
-import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.IO
-import kotlinx.coroutines.experimental.Job
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.android.Main
-import kotlinx.coroutines.experimental.launch
 import kotlin.coroutines.experimental.CoroutineContext
 
 class VoiceNotesViewModel(application: Application) : AndroidViewModel(application) {

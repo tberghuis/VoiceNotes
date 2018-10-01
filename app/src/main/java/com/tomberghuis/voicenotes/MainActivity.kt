@@ -1,17 +1,10 @@
 package com.tomberghuis.voicenotes
 
-import android.arch.lifecycle.ViewModelProviders
-import android.content.res.Resources
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log
-import android.widget.Toast
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.navigation_activity.*
-import androidx.navigation.ui.NavigationUI
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +13,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation_activity)
+
+
+        // will it blend
+       // setSupportActionBar(toolbar as Toolbar?)
         setSupportActionBar(toolbar)
 
         val host: NavHostFragment = supportFragmentManager
@@ -27,32 +24,32 @@ class MainActivity : AppCompatActivity() {
 
         // Set up Action Bar
         val navController = host.navController
-        setupActionBar(navController)
+//        setupActionBar(navController)
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         voiceNotesViewModel = ViewModelProviders.of(this).get(VoiceNotesViewModel::class.java)
 
         // TODO can be removed
-        navController.addOnNavigatedListener { _, destination ->
-            val dest: String = try {
-                resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                Integer.toString(destination.id)
-            }
-            Toast.makeText(this@MainActivity, "Navigated to $dest",
-                    Toast.LENGTH_SHORT).show()
-            Log.d("NavigationActivity", "Navigated to $dest")
-        }
+//        navController.addOnNavigatedListener { _, destination ->
+//            val dest: String = try {
+//                resources.getResourceName(destination.id)
+//            } catch (e: Resources.NotFoundException) {
+//                Integer.toString(destination.id)
+//            }
+//            Toast.makeText(this@MainActivity, "Navigated to $dest",
+//                    Toast.LENGTH_SHORT).show()
+//            Log.d("NavigationActivity", "Navigated to $dest")
+//        }
 
     }
 
-    private fun setupActionBar(navController: NavController) {
-        NavigationUI.setupActionBarWithNavController(this, navController)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(null,
-                Navigation.findNavController(this, R.id.my_nav_host_fragment))
-    }
+//    private fun setupActionBar(navController: NavController) {
+//        setupActionBarWithNavController(this, navController)
+//    }
+//
+//    override fun onSupportNavigateUp(): Boolean {
+//        return NavigationUI.navigateUp(null,
+//                Navigation.findNavController(this, R.id.my_nav_host_fragment))
+//    }
 
 }
