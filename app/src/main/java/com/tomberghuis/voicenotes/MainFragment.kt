@@ -1,8 +1,5 @@
 package com.tomberghuis.voicenotes
 
-//import com.tomberghuis.voicenotes.R.id.recyclerview
-//import androidx.recyclerview.widget.RecyclerView
-//import com.tomberghuis.voicenotes.R.id.recyclerview
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,17 +16,10 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(false)
-
-
-
-
-
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//                val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
 
         // should i use context!! ?????
         val adapter = NotesListAdapter(context!!)
@@ -42,12 +32,15 @@ class MainFragment : Fragment() {
             notes?.let { adapter.setNotes(it) }
         })
 
-        val bundle = Bundle()
-//        bundle.putString("amount", amount)
-        bundle.putBoolean("newNote", true)
+//        val bundle = Bundle()
+//        bundle.putBoolean("newNote", true)
+//        view.findViewById<FloatingActionButton>(R.id.new_note_action_bt)?.setOnClickListener(
+//                Navigation.createNavigateOnClickListener(R.id.new_note_action, bundle)
+//        )
 
+        // argument newNote is true by default
         view.findViewById<FloatingActionButton>(R.id.new_note_action_bt)?.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.new_note_action, bundle)
+                Navigation.createNavigateOnClickListener(R.id.new_note_action, null)
         )
     }
 }
